@@ -10,7 +10,7 @@ const colors = {
   danger: '#EF4444',
   border: '#E5E7EB',
   icones: {
-    activated: '#2563EB',
+    active: '#2563EB',
     inactive: '#9CA3AF'
   }
 };
