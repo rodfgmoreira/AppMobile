@@ -98,7 +98,7 @@ export default function Financeiro() {
                 borderRadius: 8,
                 backgroundColor: colors.background
               }}>
-                <Icones.QrcodeIcone size={16} color={colors.primary} />
+                <Icones.QrcodeIcone size={18} color={colors.primary} />
                 <Text style={[styles.Text, { fontSize: 14, color: colors.title }]}>Outras Opções</Text>
               </TouchableOpacity>
               <TouchableOpacity style={{
@@ -107,7 +107,7 @@ export default function Financeiro() {
                 borderRadius: 8,
                 backgroundColor: colors.background
               }}>
-                <Icones.CartaoIcone size={16} color={colors.primary} />
+                <Icones.CartaoIcone size={18} color={colors.primary} />
                 <Text style={[styles.Text, { fontSize: 14, color: colors.title }]}>Cartão</Text>
               </TouchableOpacity>
             </View>

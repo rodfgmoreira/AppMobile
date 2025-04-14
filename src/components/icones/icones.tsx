@@ -1,5 +1,5 @@
 import React from 'react';
-import Svg, { Path, G, Defs, ClipPath } from 'react-native-svg';
+import Svg, { Path } from 'react-native-svg';
 
 const HomeIcone = ({ size = 24, color = 'black' }) => (
   <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
