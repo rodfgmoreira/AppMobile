@@ -1,6 +1,5 @@
 import { View, Text } from "react-native";
 import { useFonts } from 'expo-font';
-import BarraDeNavegacao from '@/src/components/barra-de-navegacao'
 import BarraDeStatus from "@/src/components/barra-de-status";
 import Header from "@/src/components/header";
 import colors from "@/src/components/theme/cores";
@@ -8,7 +7,8 @@ import AppView from "@/src/components/app-view";
 import Content from "@/src/components/content";
 import { styles } from "@/src/components/styles/styles";
 import Icones from "@/src/components/icones/icones";
-import BoxHome from "@/src/components/box-home";
+import BoxHome from "@/src/components/box/box-home";
+import BoxAlternativaHome from "@/src/components/box/box-alternativa-home";
 
 export default function Home() {
 
@@ -60,21 +60,15 @@ export default function Home() {
               <Text style={[styles.Text, { fontSize: 14 }]}>Nova matrícula</Text>
             </BoxHome>
           </View>
-          <View style={{
-            display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',
-            padding: 16,
-            borderRadius: 12,
-            backgroundColor: colors.alternative
-          }}>
+          <BoxAlternativaHome>
             <View>
               <Text style={[styles.Title, { fontSize: 16 }]}>Pesquisa de Satisfação</Text>
               <Text style={[styles.Text, { fontSize: 14 }]}>Sua opinião é importante!</Text>
             </View>
             <Icones.EstrelaIcone size={20} color={colors.primary} />
-          </View>
+          </BoxAlternativaHome>
         </View>
       </Content>
-      <BarraDeNavegacao />
     </AppView>
   )
 }

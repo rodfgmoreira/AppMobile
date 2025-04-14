@@ -20,7 +20,7 @@ export default function BarraDeNavegacao() {
         position: 'absolute', width: '100%'
       }}>
         <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <Icones.HomeIcone size={32} color={colors.icones.active} />
+          <Icones.HomeIcone size={32} color={colors.icones.inactive} />
           <Text style={styles.NavText}>Início</Text>
         </View>
 
