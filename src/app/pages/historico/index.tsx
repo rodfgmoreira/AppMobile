@@ -33,7 +33,8 @@ export default function Historico() {
           <View style={{
             flexDirection: 'row',
             flexWrap: 'wrap',
-            justifyContent: 'space-between'
+            justifyContent: 'space-between',
+            marginBottom: -16
           }}>
             <BoxHistorico>
               <Text style={[styles.Title, { fontSize: 16 }]}>Resumo do Ano</Text>
@@ -49,21 +50,64 @@ export default function Historico() {
           </View>
           <View>
             <View style={{ display: 'flex', flexDirection: 'row', gap: 16, justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-              <Text style={styles.HeaderTitle}>Histórico Financeiro</Text>
-              <View style={{ display: 'flex', flexDirection: 'row', gap: 4, alignItems: 'center' }}>
+              <Text style={styles.SubTitle}>Pagamentos Realizados</Text>
+              <View style={{ flexDirection: 'row', gap: 4, alignItems: 'center' }}>
                 <Icones.FiltroIcone size={16} color={colors.primary} />
                 <Text style={[styles.AlternativeText, { fontSize: 14 }]}>Filtrar</Text>
               </View>
             </View>
             <BoxHistorico>
-              <Text style={[styles.Title, { fontSize: 16 }]}>Resumo do Ano</Text>
-              <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text style={[styles.Text, { fontSize: 14 }]}>Total Pago (2025)</Text>
-                <Text style={[styles.Title, { fontSize: 16 }]}>R$ 12.450,00</Text>
+              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                <View>
+                  <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidade Janeiro</Text>
+                  <Text style={[styles.Text, { fontSize: 14 }]}>Vencimento: 05/01/2025</Text>
+                </View>
+                <View>
+                  <Text style={[styles.SaldoPositivo, { fontSize: 16 }]}>R$ 1.250,00</Text>
+                </View>
               </View>
-              <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text style={[styles.Text, { fontSize: 14 }]}>Comprovantes Emitidos</Text>
-                <Text style={[styles.Title, { fontSize: 16 }]}>12</Text>
+              <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Text style={[styles.Text, { fontSize: 12 }]}>Pago em 03/01/2025</Text>
+                <View style={{ flexDirection: 'row', gap: 4, alignItems: 'center' }}>
+                  <Icones.DownloadIcone size={14} color={colors.primary} />
+                  <Text style={[styles.AlternativeText, { fontSize: 14 }]}>Comprovante</Text>
+                </View>
+              </View>
+            </BoxHistorico>
+            <BoxHistorico>
+              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                <View>
+                  <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidade Janeiro</Text>
+                  <Text style={[styles.Text, { fontSize: 14 }]}>Vencimento: 05/02/2025</Text>
+                </View>
+                <View>
+                  <Text style={[styles.SaldoPositivo, { fontSize: 16 }]}>R$ 1.250,00</Text>
+                </View>
+              </View>
+              <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Text style={[styles.Text, { fontSize: 12 }]}>Pago em 04/02/2025</Text>
+                <View style={{ flexDirection: 'row', gap: 4, alignItems: 'center' }}>
+                  <Icones.DownloadIcone size={14} color={colors.primary} />
+                  <Text style={[styles.AlternativeText, { fontSize: 14 }]}>Comprovante</Text>
+                </View>
+              </View>
+            </BoxHistorico>
+            <BoxHistorico>
+              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                <View>
+                  <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidade Janeiro</Text>
+                  <Text style={[styles.Text, { fontSize: 14 }]}>Vencimento: 05/03/2025</Text>
+                </View>
+                <View>
+                  <Text style={[styles.SaldoPositivo, { fontSize: 16 }]}>R$ 1.250,00</Text>
+                </View>
+              </View>
+              <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Text style={[styles.Text, { fontSize: 12 }]}>Pago em 03/03/2025</Text>
+                <View style={{ flexDirection: 'row', gap: 4, alignItems: 'center' }}>
+                  <Icones.DownloadIcone size={14} color={colors.primary} />
+                  <Text style={[styles.AlternativeText, { fontSize: 14 }]}>Comprovante</Text>
+                </View>
               </View>
             </BoxHistorico>
           </View>

@@ -7,6 +7,7 @@ const colors = {
   title: '#1F2937',
   description: '#4B5563',
   text: '#6B7280',
+  positive: '#059669',
   danger: '#EF4444',
   border: '#E5E7EB',
   icones: {

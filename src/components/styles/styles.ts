@@ -13,6 +13,14 @@ export const styles = StyleSheet.create({
       fontFamily: 'Poppins-Bold', fontSize: 24,
       color: colors.title
    },
+   SubTitle: {
+      fontFamily: 'Poppins-Bold', fontSize: 18,
+      color: colors.title
+   },
+   SaldoPositivo: {
+      fontFamily: 'Poppins-Bold', fontSize: 24,
+      color: colors.positive
+   },
    Text: {
       fontFamily: 'Poppins-Regular', fontSize: 16,
       color: colors.text
