@@ -1,5 +1,6 @@
 import { useFonts } from 'expo-font';
 import Home from '@/src/app/pages/home'
+import Historico from './pages/historico';
 
 export default function Index() {
 
@@ -11,6 +12,6 @@ export default function Index() {
    if (!fontsLoaded) return null;
 
    return (
-      <Home />
+      <Historico />
    )
 }

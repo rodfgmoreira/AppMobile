@@ -8,9 +8,9 @@ import AppView from "@/src/components/app-view";
 import Content from "@/src/components/content";
 import { styles } from "@/src/components/styles/styles";
 import Icones from "@/src/components/icones/icones";
-import BoxHome from "@/src/components/box-home";
+import BoxHistorico from "@/src/components/box/box-historico";
 
-export default function Home() {
+export default function Historico() {
 
   const [fontsLoaded] = useFonts({
     'Poppins-Regular': require('@/src/assets/fonts/Poppins-Regular.ttf'),
@@ -23,54 +23,49 @@ export default function Home() {
     <AppView>
       <BarraDeStatus />
       <Header>
-        <View style={{ display: 'flex', flexDirection: 'row', padding: 16, justifyContent: 'space-between', alignItems: 'center' }}>
-          <Text style={styles.HeaderTitle}>Autoatendimento</Text>
-          <Icones.AjudaIcone size={20} color={colors.primary} />
+        <View style={{ display: 'flex', flexDirection: 'row', padding: 16, gap: 16, alignItems: 'center' }}>
+          <Icones.SetaEsquerdaIcone size={20} color={colors.primary} />
+          <Text style={styles.HeaderTitle}>Histórico Financeiro</Text>
         </View>
       </Header>
       <Content>
         <View style={{ padding: 16, gap: 20 }}>
-          <View>
-            <Text style={styles.Title}>Bem-vindo!</Text>
-            <Text style={styles.Text}>Selecione uma opção para começar:</Text>
-          </View>
           <View style={{
             flexDirection: 'row',
             flexWrap: 'wrap',
             justifyContent: 'space-between'
           }}>
-            <BoxHome>
-              <Icones.MensalidadeIcone size={20} color={colors.primary} />
-              <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidades</Text>
-              <Text style={[styles.Text, { fontSize: 14 }]}>Consulte parcelas e saldo</Text>
-            </BoxHome>
-            <BoxHome>
-              <Icones.BoletoIcone size={20} color={colors.primary} />
-              <Text style={[styles.Title, { fontSize: 16 }]}>2ª Via Boleto</Text>
-              <Text style={[styles.Text, { fontSize: 14 }]}>Gere seus boletos</Text>
-            </BoxHome>
-            <BoxHome>
-              <Icones.HistoricoIcone size={20} color={colors.primary} />
-              <Text style={[styles.Title, { fontSize: 16 }]}>Histórico</Text>
-              <Text style={[styles.Text, { fontSize: 14 }]}>Pagamentos realizados</Text>
-            </BoxHome>
-            <BoxHome>
-              <Icones.MatriculaIcone size={20} color={colors.primary} />
-              <Text style={[styles.Title, { fontSize: 16 }]}>Matrícula</Text>
-              <Text style={[styles.Text, { fontSize: 14 }]}>Nova matrícula</Text>
-            </BoxHome>
+            <BoxHistorico>
+              <Text style={[styles.Title, { fontSize: 16 }]}>Resumo do Ano</Text>
+              <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Total Pago (2025)</Text>
+                <Text style={[styles.Title, { fontSize: 16 }]}>R$ 12.450,00</Text>
+              </View>
+              <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Comprovantes Emitidos</Text>
+                <Text style={[styles.Title, { fontSize: 16 }]}>12</Text>
+              </View>
+            </BoxHistorico>
           </View>
-          <View style={{
-            display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',
-            padding: 16,
-            borderRadius: 12,
-            backgroundColor: colors.alternative
-          }}>
-            <View>
-              <Text style={[styles.Title, { fontSize: 16 }]}>Pesquisa de Satisfação</Text>
-              <Text style={[styles.Text, { fontSize: 14 }]}>Sua opinião é importante!</Text>
+          <View>
+            <View style={{ display: 'flex', flexDirection: 'row', gap: 16, justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+              <Text style={styles.HeaderTitle}>Histórico Financeiro</Text>
+              <View style={{ display: 'flex', flexDirection: 'row', gap: 4, alignItems: 'center' }}>
+                <Icones.FiltroIcone size={16} color={colors.primary} />
+                <Text style={[styles.AlternativeText, { fontSize: 14 }]}>Filtrar</Text>
+              </View>
             </View>
-            <Icones.EstrelaIcone size={20} color={colors.primary} />
+            <BoxHistorico>
+              <Text style={[styles.Title, { fontSize: 16 }]}>Resumo do Ano</Text>
+              <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Total Pago (2025)</Text>
+                <Text style={[styles.Title, { fontSize: 16 }]}>R$ 12.450,00</Text>
+              </View>
+              <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Comprovantes Emitidos</Text>
+                <Text style={[styles.Title, { fontSize: 16 }]}>12</Text>
+              </View>
+            </BoxHistorico>
           </View>
         </View>
       </Content>

@@ -8,7 +8,7 @@ import AppView from "@/src/components/app-view";
 import Content from "@/src/components/content";
 import { styles } from "@/src/components/styles/styles";
 import Icones from "@/src/components/icones/icones";
-import BoxHome from "@/src/components/box-home";
+import BoxHome from "@/src/components/box/box-home";
 
 export default function Home() {
 

@@ -1,15 +1,15 @@
 import { ReactNode } from 'react';
 import { View } from 'react-native';
-import colors from "../theme/cores";
+import colors from "../../theme/cores";
 
-type BoxHomeProps = {
+type BoxHistoricoProps = {
   children: ReactNode;
 };
 
-export default function BoxHome({ children }: BoxHomeProps) {
+export default function BoxHistorico({ children }: BoxHistoricoProps) {
   return (
     <View style={{
-      width: 171, height: 124,
+      width: '100%', height: 'auto',
       backgroundColor: colors.background,
       padding: 16, marginBottom: 16,
       borderRadius: 12,

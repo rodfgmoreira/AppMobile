@@ -17,6 +17,10 @@ export const styles = StyleSheet.create({
       fontFamily: 'Poppins-Regular', fontSize: 16,
       color: colors.text
    },
+   AlternativeText: {
+      fontFamily: 'Poppins-Regular', fontSize: 16,
+      color: colors.primary
+   },
    NavText: {
       fontFamily: 'Poppins-Regular',
       color: colors.description
