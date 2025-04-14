@@ -50,7 +50,7 @@ export default function Historico() {
           </View>
           <View>
             <View style={{ display: 'flex', flexDirection: 'row', gap: 16, justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-              <Text style={styles.SubTitle}>Pagamentos Realizados</Text>
+              <Text style={styles.BoldText}>Pagamentos Realizados</Text>
               <View style={{ flexDirection: 'row', gap: 4, alignItems: 'center' }}>
                 <Icones.FiltroIcone size={16} color={colors.primary} />
                 <Text style={[styles.AlternativeText, { fontSize: 14 }]}>Filtrar</Text>
@@ -77,7 +77,7 @@ export default function Historico() {
             <BoxHistorico>
               <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                 <View>
-                  <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidade Janeiro</Text>
+                  <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidade Fevereiro</Text>
                   <Text style={[styles.Text, { fontSize: 14 }]}>Vencimento: 05/02/2025</Text>
                 </View>
                 <View>
@@ -95,7 +95,7 @@ export default function Historico() {
             <BoxHistorico>
               <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                 <View>
-                  <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidade Janeiro</Text>
+                  <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidade Março</Text>
                   <Text style={[styles.Text, { fontSize: 14 }]}>Vencimento: 05/03/2025</Text>
                 </View>
                 <View>
@@ -113,7 +113,6 @@ export default function Historico() {
           </View>
         </View>
       </Content>
-      <BarraDeNavegacao />
     </AppView>
   )
 }

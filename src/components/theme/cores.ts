@@ -9,6 +9,7 @@ const colors = {
   text: '#6B7280',
   positive: '#059669',
   danger: '#EF4444',
+  dangerBg: '#FEE2E2',
   border: '#E5E7EB',
   icones: {
     active: '#2563EB',
