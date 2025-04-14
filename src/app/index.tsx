@@ -1,6 +1,7 @@
 import { useFonts } from 'expo-font';
 import Home from '@/src/app/pages/home'
 import Historico from './pages/historico';
+import Financeiro from './pages/financeiro';
 
 export default function Index() {
 
@@ -12,6 +13,6 @@ export default function Index() {
    if (!fontsLoaded) return null;
 
    return (
-      <Historico />
+      <Financeiro />
    )
 }

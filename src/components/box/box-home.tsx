@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { View } from 'react-native';
-import colors from "../../theme/cores";
+import colors from "../theme/cores";
 
 type BoxHomeProps = {
   children: ReactNode;
