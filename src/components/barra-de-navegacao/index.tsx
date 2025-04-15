@@ -21,22 +21,19 @@ export default function BarraDeNavegacao() {
       }}>
         <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <Icones.HomeIcone size={32} color={colors.icones.inactive} />
-          <Text style={styles.NavText}>Início</Text>
+          <Text style={styles.NavText}>Início </Text>
         </View>
-
         <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <Icones.HistoricoIcone size={32} color={colors.icones.inactive} />
-          <Text style={styles.NavText}>Histórico</Text>
+          <Text style={styles.NavText}>Histórico </Text>
         </View>
-
         <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <Icones.PerfilIcone size={32} color={colors.icones.inactive} />
-          <Text style={styles.NavText}>Perfil</Text>
+          <Text style={styles.NavText}>Perfil </Text>
         </View>
-
         <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <Icones.AjustesIcone size={32} color={colors.icones.inactive} />
-          <Text style={styles.NavText}>Perfil</Text>
+          <Text style={styles.NavText}>Ajustes </Text>
         </View>
       </View>
     </View>

@@ -8,9 +8,8 @@ import AppView from "@/src/components/app-view";
 import Content from "@/src/components/content";
 import { styles } from "@/src/components/styles/styles";
 import Icones from "@/src/components/icones/icones";
-import BoxSaldo from "@/src/components/box/box-saldo";
 import BoxParcelas from "@/src/components/box/box-parcelas";
-import Status from "@/src/components/status/status";
+import BoxAlternativaHome from "@/src/components/box/box-alternativa-home";
 
 export default function SegundaViaBoleto() {
 
@@ -40,7 +39,7 @@ export default function SegundaViaBoleto() {
                   <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidade Janeiro/2025</Text>
                   <Text style={[styles.Text, { fontSize: 14 }]}>Vencimento: 05/01/2025</Text>
                 </View>
-                <View style={{ display: "flex", flexDirection: "column", alignItems: "flex-end"}}>
+                <View style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
                   <Text style={[styles.Title, { fontSize: 16, color: colors.danger }]}>R$ 799,90</Text>
                   <Text style={[styles.Text, { fontSize: 14, color: colors.danger }]}>Atrasado</Text>
                 </View>
@@ -57,7 +56,7 @@ export default function SegundaViaBoleto() {
                   <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidade Fevereiro/2025</Text>
                   <Text style={[styles.Text, { fontSize: 14 }]}>Vencimento: 05/02/2025</Text>
                 </View>
-                <View style={{ display: "flex", flexDirection: "column", alignItems: "flex-end"}}>
+                <View style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
                   <Text style={[styles.Title, { fontSize: 16, color: colors.title }]}>R$ 799,90</Text>
                   <Text style={[styles.Text, { fontSize: 14, color: colors.primary }]}>Em aberto</Text>
                 </View>
@@ -81,8 +80,8 @@ export default function SegundaViaBoleto() {
                 borderRadius: 8,
                 backgroundColor: colors.background
               }}>
-                <Icones.QrcodeIcone size={18} color={colors.primary} />
-                <Text style={[styles.Text, { fontSize: 14, color: colors.title }]}>Outras Opções</Text>
+                <Icones.PixIcone size={18} color={colors.primary} />
+                <Text style={[styles.Text, { fontSize: 14, color: colors.title }]}>Pagar com Pix</Text>
               </TouchableOpacity>
               <TouchableOpacity style={{
                 display: "flex", flexDirection: "row", alignItems: "center",
@@ -95,6 +94,18 @@ export default function SegundaViaBoleto() {
               </TouchableOpacity>
             </View>
           </BoxAlternativa>
+          <View style={{
+            display: 'flex', flexDirection: 'row', gap: 16, alignItems: 'center',
+            padding: 16,
+            borderRadius: 12,
+            backgroundColor: colors.alternative
+          }}>
+            <Icones.InfoIcone size={20} color={colors.primary} />
+            <View>
+              <Text style={[styles.Title, { fontSize: 16 }]}>Precisa de ajuda?</Text>
+              <Text style={[styles.Text, { fontSize: 14 }]}>Entre em contato com nossa secretaria</Text>
+            </View>
+          </View>
         </View>
       </Content>
     </AppView>
