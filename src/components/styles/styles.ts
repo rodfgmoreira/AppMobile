@@ -37,7 +37,7 @@ export const styles = StyleSheet.create({
       color: colors.primary
    },
    NavText: {
-      fontFamily: 'Poppins-Regular',
+      fontFamily: 'Poppins-Regular', fontSize: 12,
       color: colors.description
    }
 })
