@@ -17,8 +17,6 @@ export default function Home() {
     'Poppins-Bold': require('@/src/assets/fonts/Poppins-Bold.ttf'),
   });
 
-  if (!fontsLoaded) return null;
-
   return (
     <AppView>
       <BarraDeStatus />

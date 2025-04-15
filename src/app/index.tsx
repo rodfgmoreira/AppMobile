@@ -3,6 +3,7 @@ import Home from '@/src/app/pages/home'
 import Historico from './pages/historico';
 import Financeiro from './pages/financeiro';
 import BarraDeNavegacao from '../components/barra-de-navegacao';
+import SegundaViaBoleto from './pages/segunda-via-boleto';
 
 export default function Index() {
 
@@ -11,11 +12,9 @@ export default function Index() {
       'Poppins-Bold': require('../assets/fonts/Poppins-Bold.ttf'),
    });
 
-   if (!fontsLoaded) return null;
-
    return (
       <>
-         <Financeiro />
+         <SegundaViaBoleto />
          <BarraDeNavegacao />
       </>
    )

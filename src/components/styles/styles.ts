@@ -3,9 +3,14 @@ import colors from "@/src/components/theme/cores"
 
 export const styles = StyleSheet.create({
    Button: {
-      height: 38, width: '100%',
+      height: 40, width: '100%',
       justifyContent: 'center', alignItems: 'center', 
       borderColor: colors.primary, borderRadius: 8, borderStyle: 'solid', borderWidth: 1
+   },
+   AlternativeButton: {
+      height: 40, width: '100%',
+      justifyContent: 'center', alignItems: 'center', 
+      borderRadius: 8, backgroundColor: colors.primary
    },
    HeaderTitle: {
       fontFamily: 'Poppins-Bold', fontSize: 20,
