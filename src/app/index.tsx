@@ -1,22 +1,31 @@
+import React from 'react';
 import { useFonts } from 'expo-font';
-import Home from '@/src/app/pages/home'
+import Home from '@/src/app/pages/home';
 import Historico from './pages/historico';
 import Financeiro from './pages/financeiro';
+import SegundaViaBoleto from './pages/segunda-via-boleto';
 import BarraDeNavegacao from '../components/barra-de-navegacao';
 
 export default function Index() {
+  const [activeTab, setActiveTab] = React.useState<'Home' | 'Historico' | 'Perfil' | 'Ajustes'>('Home');
 
-   const [fontsLoaded] = useFonts({
-      'Poppins-Regular': require('../assets/fonts/Poppins-Regular.ttf'),
-      'Poppins-Bold': require('../assets/fonts/Poppins-Bold.ttf'),
-   });
+  const renderScreen = () => {
+    switch (activeTab) {
+      case 'Home':
+        return <Home />;
+      case 'Historico':
+        return <Historico />;
+      case 'Perfil':
+        return <Financeiro />;
+      default:
+        return <Home />;
+    }
+  };
 
-   if (!fontsLoaded) return null;
-
-   return (
-      <>
-         <Financeiro />
-         <BarraDeNavegacao />
-      </>
-   )
+  return (
+    <>
+      {renderScreen()}
+      <BarraDeNavegacao activeTab={activeTab} onTabChange={setActiveTab} />
+    </>
+  );
 }
