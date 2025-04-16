@@ -26,6 +26,7 @@ export default function BarraDeNavegacao({ activeTab, onTabChange }: NavProps) {
         alignItems: 'center',
         paddingVertical: 13,
         paddingHorizontal: 16,
+        backgroundColor: colors.background,
         borderStyle: 'solid',
         borderTopWidth: 1,
         borderColor: colors.border,
