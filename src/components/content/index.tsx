@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import colors from "../theme/cores";
 
 type ContentProps = {
@@ -8,8 +8,12 @@ type ContentProps = {
 
 export default function Content({ children }: ContentProps) {
   return (
-    <View style={{ flex: 1, paddingBottom: 70, backgroundColor: colors.secundaryBg }}>
+    <ScrollView
+      style={{ flex: 1, backgroundColor: colors.secundaryBg }}
+      contentContainerStyle={{ paddingBottom: 70 }}
+      showsVerticalScrollIndicator={false}
+    >
       {children}
-    </View>
+    </ScrollView>
   );
 }

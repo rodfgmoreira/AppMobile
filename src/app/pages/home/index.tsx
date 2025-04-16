@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { useFonts } from 'expo-font';
 import BarraDeStatus from "@/src/components/barra-de-status";
 import Header from "@/src/components/header";
@@ -22,7 +22,7 @@ export default function Home() {
       <BarraDeStatus />
       <Header>
         <View style={{ display: 'flex', flexDirection: 'row', padding: 16, justifyContent: 'space-between', alignItems: 'center' }}>
-          <Text style={styles.HeaderTitle}>Autoatendimento</Text>
+          <Text style={styles.HeaderTitle}>Autoatendimento </Text>
           <Icones.AjudaIcone size={20} color={colors.primary} />
         </View>
       </Header>
@@ -38,24 +38,32 @@ export default function Home() {
             justifyContent: 'space-between'
           }}>
             <BoxHome>
-              <Icones.MensalidadeIcone size={20} color={colors.primary} />
-              <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidades</Text>
-              <Text style={[styles.Text, { fontSize: 14 }]}>Consulte parcelas e saldo</Text>
+              <TouchableOpacity>
+                <Icones.MensalidadeIcone size={20} color={colors.primary} />
+                <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidades</Text>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Consulte parcelas e saldo</Text>
+              </TouchableOpacity>
             </BoxHome>
             <BoxHome>
-              <Icones.BoletoIcone size={20} color={colors.primary} />
-              <Text style={[styles.Title, { fontSize: 16 }]}>2ª Via Boleto</Text>
-              <Text style={[styles.Text, { fontSize: 14 }]}>Gere seus boletos</Text>
+              <TouchableOpacity>
+                <Icones.BoletoIcone size={20} color={colors.primary} />
+                <Text style={[styles.Title, { fontSize: 16 }]}>2ª Via Boleto</Text>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Gere seus boletos</Text>
+              </TouchableOpacity>
             </BoxHome>
             <BoxHome>
-              <Icones.HistoricoIcone size={20} color={colors.primary} />
-              <Text style={[styles.Title, { fontSize: 16 }]}>Histórico</Text>
-              <Text style={[styles.Text, { fontSize: 14 }]}>Pagamentos realizados</Text>
+              <TouchableOpacity>
+                <Icones.HistoricoIcone size={20} color={colors.primary} />
+                <Text style={[styles.Title, { fontSize: 16 }]}>Histórico</Text>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Pagamentos realizados</Text>
+              </TouchableOpacity>
             </BoxHome>
             <BoxHome>
-              <Icones.MatriculaIcone size={20} color={colors.primary} />
-              <Text style={[styles.Title, { fontSize: 16 }]}>Matrícula</Text>
-              <Text style={[styles.Text, { fontSize: 14 }]}>Nova matrícula</Text>
+              <TouchableOpacity>
+                <Icones.MatriculaIcone size={20} color={colors.primary} />
+                <Text style={[styles.Title, { fontSize: 16 }]}>Matrícula</Text>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Nova matrícula</Text>
+              </TouchableOpacity>
             </BoxHome>
           </View>
           <BoxAlternativaHome>
