@@ -9,9 +9,11 @@ import Content from "@/src/components/content";
 import { styles } from "@/src/components/styles/styles";
 import Icones from "@/src/components/icones/icones";
 import BoxParcelas from "@/src/components/box/box-parcelas";
-import BoxAlternativaHome from "@/src/components/box/box-alternativa-home";
+import { useNavigation } from '@react-navigation/native';
 
 export default function SegundaViaBoleto() {
+
+  const navigation = useNavigation();
 
   const [fontsLoaded] = useFonts({
     'Poppins-Regular': require('@/src/assets/fonts/Poppins-Regular.ttf'),
@@ -23,7 +25,9 @@ export default function SegundaViaBoleto() {
       <BarraDeStatus />
       <Header>
         <View style={{ display: 'flex', flexDirection: 'row', padding: 16, gap: 16, alignItems: 'center' }}>
-          <Icones.SetaEsquerdaIcone size={20} color={colors.primary} />
+          <TouchableOpacity>
+            <Icones.SetaEsquerdaIcone size={20} color={colors.primary} />
+          </TouchableOpacity>
           <Text style={styles.HeaderTitle}>2ª Via de Boletos</Text>
         </View>
       </Header>

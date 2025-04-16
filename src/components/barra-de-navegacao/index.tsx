@@ -2,15 +2,14 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Icones from '../icones/icones';
 import colors from '../theme/cores';
-import { styles } from '../styles/styles';
 
-type Props = {
+type NavProps = {
   activeTab: 'Home' | 'Historico' | 'Perfil' | 'Ajustes';
   onTabChange: (tab: 'Home' | 'Historico' | 'Perfil' | 'Ajustes') => void;
 };
 
-export default function BarraDeNavegacao({ activeTab, onTabChange }: Props) {
-  const isActive = (tab: Props['activeTab']) => activeTab === tab;
+export default function BarraDeNavegacao({ activeTab, onTabChange }: NavProps) {
+  const isActive = (tab: NavProps['activeTab']) => activeTab === tab;
 
   return (
     <View style={{
