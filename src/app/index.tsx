@@ -1,5 +1,4 @@
 import React from 'react';
-import { useFonts } from 'expo-font';
 import Home from '@/src/app/pages/home';
 import Historico from './pages/historico';
 import Financeiro from './pages/financeiro';
@@ -17,6 +16,8 @@ export default function Index() {
         return <Historico />;
       case 'Perfil':
         return <Financeiro />;
+      case 'Ajustes':
+        return <SegundaViaBoleto />;
       default:
         return <Home />;
     }
