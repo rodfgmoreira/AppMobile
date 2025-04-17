@@ -9,23 +9,28 @@ import Content from "@/src/components/content";
 import { styles } from "@/src/components/styles/styles";
 import Icones from "@/src/components/icones/icones";
 import BoxParcelas from "@/src/components/box/box-parcelas";
-import useAppNavigation from '@/src/hooks/useAppNavigation';
 
-export default function SegundaViaBoleto() {
+type Props = {
+  onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'Ajustes') => void;
+};
 
-  const navigation = useAppNavigation();
-
+export default function SegundaViaBoleto({ onNavigate }: Props) {
+  
   const [fontsLoaded] = useFonts({
     'Poppins-Regular': require('@/src/assets/fonts/Poppins-Regular.ttf'),
     'Poppins-Bold': require('@/src/assets/fonts/Poppins-Bold.ttf'),
   });
+
+  const handleButtonClick = () => {
+    onNavigate('Historico');
+  };
 
   return (
     <AppView>
       <BarraDeStatus />
       <Header>
         <View style={{ display: 'flex', flexDirection: 'row', padding: 16, gap: 16, alignItems: 'center' }}>
-          <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+          <TouchableOpacity onPress={() => onNavigate('Home')}>
             <Icones.SetaEsquerdaIcone size={20} color={colors.primary} />
           </TouchableOpacity>
           <Text style={styles.HeaderTitle}>2ª Via de Boletos</Text>

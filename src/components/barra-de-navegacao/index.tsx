@@ -4,8 +4,8 @@ import Icones from '../icones/icones';
 import colors from '../theme/cores';
 
 type NavProps = {
-  activeTab: 'Home' | 'Historico' | 'Perfil' | 'Ajustes';
-  onTabChange: (tab: 'Home' | 'Historico' | 'Perfil' | 'Ajustes') => void;
+  activeTab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'Ajustes';
+  onTabChange: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'Ajustes') => void;
 };
 
 export default function BarraDeNavegacao({ activeTab, onTabChange }: NavProps) {

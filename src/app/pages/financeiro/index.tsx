@@ -12,19 +12,29 @@ import BoxSaldo from "@/src/components/box/box-saldo";
 import BoxParcelas from "@/src/components/box/box-parcelas";
 import Status from "@/src/components/status/status";
 
-export default function Financeiro() {
+type Props = {
+  onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'SegundaViaBoleto' | 'Ajustes') => void;
+};
+
+export default function Financeiro({ onNavigate }: Props) {
 
   const [fontsLoaded] = useFonts({
     'Poppins-Regular': require('@/src/assets/fonts/Poppins-Regular.ttf'),
     'Poppins-Bold': require('@/src/assets/fonts/Poppins-Bold.ttf'),
   });
 
+  const handleButtonClick = () => {
+    onNavigate('Historico');
+  };
+
   return (
     <AppView>
       <BarraDeStatus />
       <Header>
         <View style={{ display: 'flex', flexDirection: 'row', padding: 16, gap: 16, alignItems: 'center' }}>
-          <Icones.SetaEsquerdaIcone size={20} />
+          <TouchableOpacity onPress={() => onNavigate('Home')}>
+            <Icones.SetaEsquerdaIcone size={20} />
+          </TouchableOpacity>
           <Text style={styles.HeaderTitle}>Financeiro</Text>
         </View>
       </Header>

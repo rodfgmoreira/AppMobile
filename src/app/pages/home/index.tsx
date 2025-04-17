@@ -10,19 +10,27 @@ import Icones from "@/src/components/icones/icones";
 import BoxHome from "@/src/components/box/box-home";
 import BoxAlternativaHome from "@/src/components/box/box-alternativa-home";
 
-export default function Home() {
+type Props = {
+  onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'Ajustes') => void;
+};
+
+export default function Home({ onNavigate }: Props) {
 
   const [fontsLoaded] = useFonts({
     'Poppins-Regular': require('@/src/assets/fonts/Poppins-Regular.ttf'),
     'Poppins-Bold': require('@/src/assets/fonts/Poppins-Bold.ttf'),
   });
 
+  const handleButtonClick = () => {
+    onNavigate('Historico');
+  };
+
   return (
     <AppView>
       <BarraDeStatus />
       <Header>
         <View style={{ display: 'flex', flexDirection: 'row', padding: 16, justifyContent: 'space-between', alignItems: 'center' }}>
-          <Text style={styles.HeaderTitle}>Autoatendimento </Text>
+          <Text style={styles.HeaderTitle}>Autoatendimento</Text>
           <Icones.AjudaIcone size={20} color={colors.primary} />
         </View>
       </Header>
@@ -38,28 +46,28 @@ export default function Home() {
             justifyContent: 'space-between'
           }}>
             <BoxHome>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => onNavigate('Home')}>
                 <Icones.MensalidadeIcone size={20} color={colors.primary} />
                 <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidades</Text>
                 <Text style={[styles.Text, { fontSize: 14 }]}>Consulte parcelas e saldo</Text>
               </TouchableOpacity>
             </BoxHome>
             <BoxHome>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => onNavigate('SegundaViaBoleto')}>
                 <Icones.BoletoIcone size={20} color={colors.primary} />
                 <Text style={[styles.Title, { fontSize: 16 }]}>2ª Via Boleto</Text>
                 <Text style={[styles.Text, { fontSize: 14 }]}>Gere seus boletos</Text>
               </TouchableOpacity>
             </BoxHome>
             <BoxHome>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => onNavigate('Historico')}>
                 <Icones.HistoricoIcone size={20} color={colors.primary} />
                 <Text style={[styles.Title, { fontSize: 16 }]}>Histórico</Text>
                 <Text style={[styles.Text, { fontSize: 14 }]}>Pagamentos realizados</Text>
               </TouchableOpacity>
             </BoxHome>
             <BoxHome>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => onNavigate('Matricula')}>
                 <Icones.MatriculaIcone size={20} color={colors.primary} />
                 <Text style={[styles.Title, { fontSize: 16 }]}>Matrícula</Text>
                 <Text style={[styles.Text, { fontSize: 14 }]}>Nova matrícula</Text>
