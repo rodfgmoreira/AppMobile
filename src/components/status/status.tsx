@@ -33,7 +33,7 @@ export default function Status({ children, type = 'vencer' }: StatusProps) {
         backgroundColor,
         borderRadius: 9999,
         alignSelf: 'flex-start',
-        width: 75
+        width: 80
       }}
     >
       <Text style={{ color: textColor, fontFamily: 'Poppins-Regular', fontSize: 12 }}>

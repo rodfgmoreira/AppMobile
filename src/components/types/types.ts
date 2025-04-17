@@ -4,4 +4,5 @@ export type RootStackParamList = {
   Perfil: undefined;
   Ajustes: undefined;
   SegundaViaBoleto: undefined;
+  Main: undefined;
 };

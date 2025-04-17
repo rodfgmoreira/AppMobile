@@ -6,20 +6,22 @@ import SegundaViaBoleto from './pages/segunda-via-boleto';
 import BarraDeNavegacao from '../components/barra-de-navegacao';
 
 export default function Index() {
-  const [activeTab, setActiveTab] = React.useState<'Home' | 'Historico' | 'Perfil' | 'Ajustes'>('Home');
+  const [activeTab, setActiveTab] = React.useState<'Home' | 'Historico' | 'Perfil' | 'SegundaViaBoleto' | 'Ajustes'>('Home');
 
   const renderScreen = () => {
     switch (activeTab) {
       case 'Home':
-        return <Home />;
+        return <Home onNavigate={setActiveTab} />;
       case 'Historico':
-        return <Historico />;
+        return <Historico onNavigate={setActiveTab} />;
       case 'Perfil':
-        return <Financeiro />;
+        return <Financeiro onNavigate={setActiveTab} />;
       case 'Ajustes':
-        return <SegundaViaBoleto />;
+        return <SegundaViaBoleto onNavigate={setActiveTab} />;
+      case 'SegundaViaBoleto':
+        return <SegundaViaBoleto onNavigate={setActiveTab} />;
       default:
-        return <Home />;
+        return <Home onNavigate={setActiveTab} />;
     }
   };
 
