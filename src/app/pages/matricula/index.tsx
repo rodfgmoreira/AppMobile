@@ -1,6 +1,5 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import { useFonts } from 'expo-font';
-import BoxAlternativa from "@/src/components/box/box-alternativa";
 import BarraDeStatus from "@/src/components/barra-de-status";
 import Header from "@/src/components/header";
 import colors from "@/src/components/theme/cores";
@@ -8,7 +7,7 @@ import AppView from "@/src/components/app-view";
 import Content from "@/src/components/content";
 import { styles } from "@/src/components/styles/styles";
 import Icones from "@/src/components/icones/icones";
-import BoxParcelas from "@/src/components/box/box-parcelas";
+import BoxHistorico from "@/src/components/box/box-historico";
 
 type Props = {
   onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'Ajustes') => void;
@@ -77,9 +76,25 @@ export default function Matricula({ onNavigate }: Props) {
             </View>
           </View>
           <View>
-            <View style={{ display: 'flex', flexDirection: 'row', gap: 16, justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+            <View style={{ marginBottom: 16 }}>
               <Text style={styles.BoldText}>Taxa de Matrícula</Text>
             </View>
+            <BoxHistorico>
+              <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                <Text style={[styles.Text, { fontSize: 16, color: colors.description }]}>Valor da taxa</Text>
+                <Text style={[styles.Title, { fontSize: 16 }]}>R$ 250,00</Text>
+              </View>
+              <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Vencimento: 7 dias após confirmação</Text>
+              </View>
+            </BoxHistorico>
+            <BoxHistorico>
+              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                <View>
+                  <Text style={[styles.Title, { fontSize: 16 }]}>Forma de Pagamento</Text>
+                </View>
+              </View>
+            </BoxHistorico>
           </View>
         </View>
       </Content>
