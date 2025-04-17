@@ -11,7 +11,7 @@ import BoxHome from "@/src/components/box/box-home";
 import BoxAlternativaHome from "@/src/components/box/box-alternativa-home";
 
 type Props = {
-  onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'SegundaViaBoleto' | 'Ajustes') => void;
+  onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'Ajustes') => void;
 };
 
 export default function Home({ onNavigate }: Props) {
@@ -67,7 +67,7 @@ export default function Home({ onNavigate }: Props) {
               </TouchableOpacity>
             </BoxHome>
             <BoxHome>
-              <TouchableOpacity onPress={() => onNavigate('Home')}>
+              <TouchableOpacity onPress={() => onNavigate('Matricula')}>
                 <Icones.MatriculaIcone size={20} color={colors.primary} />
                 <Text style={[styles.Title, { fontSize: 16 }]}>Matrícula</Text>
                 <Text style={[styles.Text, { fontSize: 14 }]}>Nova matrícula</Text>
