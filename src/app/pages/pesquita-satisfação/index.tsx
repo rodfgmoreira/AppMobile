@@ -13,7 +13,7 @@ type Props = {
   onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'PesquisaSatisfacao' | 'Ajustes') => void;
 };
 
-export default function SegundaViaBoleto({ onNavigate }: Props) {
+export default function PesquisaSatisfacao({ onNavigate }: Props) {
 
   const handleButtonClick = () => {
     onNavigate('Historico');
@@ -27,14 +27,14 @@ export default function SegundaViaBoleto({ onNavigate }: Props) {
           <TouchableOpacity onPress={() => onNavigate('Home')}>
             <Icones.SetaEsquerdaIcone size={20} color={colors.primary} />
           </TouchableOpacity>
-          <Text style={styles.HeaderTitle}>2ª Via de Boletos</Text>
+          <Text style={styles.HeaderTitle}>Pesquisa de Satisfação</Text>
         </View>
       </Header>
       <Content>
         <View style={{ padding: 16, gap: 20 }}>
           <View>
             <View style={{ display: 'flex', flexDirection: 'row', gap: 16, justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-              <Text style={styles.BoldText}>Mensalidades Pendentes</Text>
+              <Text style={styles.Title}>Sua opinião é importante!</Text>
             </View>
             <BoxParcelas>
               <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>

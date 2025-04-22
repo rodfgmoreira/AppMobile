@@ -11,7 +11,7 @@ import BoxAlternativaHome from "@/src/components/box/box-alternativa-home";
 import { useState } from "react";
 
 type Props = {
-  onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'Ajustes') => void;
+  onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'PesquisaSatisfacao' | 'SegundaViaBoleto' | 'Ajustes') => void;
 };
 
 export default function Home({ onNavigate }: Props) {
@@ -96,7 +96,7 @@ export default function Home({ onNavigate }: Props) {
             justifyContent: 'space-between'
           }}>
             <BoxHome>
-              <TouchableOpacity onPress={() => onNavigate('Home')}>
+              <TouchableOpacity onPress={() => onNavigate('PesquisaSatisfacao')}>
                 <Icones.MensalidadeIcone size={20} color={colors.primary} />
                 <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidades</Text>
                 <Text style={[styles.Text, { fontSize: 14 }]}>Consulte parcelas e saldo</Text>

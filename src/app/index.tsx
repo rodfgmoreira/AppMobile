@@ -5,9 +5,10 @@ import Financeiro from './pages/financeiro';
 import SegundaViaBoleto from './pages/segunda-via-boleto';
 import BarraDeNavegacao from '../components/barra-de-navegacao';
 import Matricula from './pages/matricula';
+import PesquisaSatisfacao from './pages/pesquita-satisfação';
 
 export default function Index() {
-  const [activeTab, setActiveTab] = React.useState<'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'Ajustes'>('Home');
+  const [activeTab, setActiveTab] = React.useState<'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'PesquisaSatisfacao' | 'Ajustes'>('Home');
 
   const renderScreen = () => {
     switch (activeTab) {
@@ -23,6 +24,8 @@ export default function Index() {
         return <SegundaViaBoleto onNavigate={setActiveTab} />;
       case 'Matricula':
         return <Matricula onNavigate={setActiveTab} />;
+      case 'PesquisaSatisfacao':
+        return <PesquisaSatisfacao onNavigate={setActiveTab} />;
       default:
         return <Home onNavigate={setActiveTab} />;
     }
