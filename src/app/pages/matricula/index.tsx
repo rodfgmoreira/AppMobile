@@ -29,11 +29,6 @@ const pagamentos = [
 
 export default function Matricula({ onNavigate }: Props) {
 
-  const [fontsLoaded] = useFonts({
-    'Poppins-Regular': require('@/src/assets/fonts/Poppins-Regular.ttf'),
-    'Poppins-Bold': require('@/src/assets/fonts/Poppins-Bold.ttf'),
-  });
-
   const handleButtonClick = () => {
     onNavigate('Historico');
   };

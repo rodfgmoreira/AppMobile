@@ -1,5 +1,4 @@
 import { View, Text, TouchableOpacity } from "react-native";
-import { useFonts } from 'expo-font';
 import BarraDeStatus from "@/src/components/barra-de-status";
 import Header from "@/src/components/header";
 import colors from "@/src/components/theme/cores";
@@ -14,11 +13,6 @@ type Props = {
 };
 
 export default function Historico({ onNavigate }: Props) {
-
-  const [fontsLoaded] = useFonts({
-    'Poppins-Regular': require('@/src/assets/fonts/Poppins-Regular.ttf'),
-    'Poppins-Bold': require('@/src/assets/fonts/Poppins-Bold.ttf'),
-  });
 
   const handleButtonClick = () => {
     onNavigate('Historico');
