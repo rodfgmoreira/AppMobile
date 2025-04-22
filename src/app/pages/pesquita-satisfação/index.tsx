@@ -33,80 +33,9 @@ export default function PesquisaSatisfacao({ onNavigate }: Props) {
       <Content>
         <View style={{ padding: 16, gap: 20 }}>
           <View>
-            <View style={{ display: 'flex', flexDirection: 'row', gap: 16, justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+            <View style={{ display: 'flex', marginBottom: 16 }}>
               <Text style={styles.Title}>Sua opinião é importante!</Text>
-            </View>
-            <BoxParcelas>
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <View>
-                  <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidade Janeiro/2025</Text>
-                  <Text style={[styles.Text, { fontSize: 14 }]}>Vencimento: 05/01/2025</Text>
-                </View>
-                <View style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
-                  <Text style={[styles.Title, { fontSize: 16, color: colors.danger }]}>R$ 799,90</Text>
-                  <Text style={[styles.Text, { fontSize: 14, color: colors.danger }]}>Atrasado</Text>
-                </View>
-              </View>
-              <TouchableOpacity style={[styles.AlternativeButton]} onPress={() => alert('Gerando boleto...')}>
-                <Text style={[styles.Text, { color: colors.background, fontSize: 16 }]}>
-                  Gerar Boleto
-                </Text>
-              </TouchableOpacity>
-            </BoxParcelas>
-            <BoxParcelas>
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <View>
-                  <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidade Fevereiro/2025</Text>
-                  <Text style={[styles.Text, { fontSize: 14 }]}>Vencimento: 05/02/2025</Text>
-                </View>
-                <View style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
-                  <Text style={[styles.Title, { fontSize: 16, color: colors.title }]}>R$ 799,90</Text>
-                  <Text style={[styles.Text, { fontSize: 14, color: colors.primary }]}>Em aberto</Text>
-                </View>
-              </View>
-              <TouchableOpacity style={[styles.AlternativeButton]} onPress={() => alert('Gerando boleto...')}>
-                <Text style={[styles.Text, { color: colors.background, fontSize: 16 }]}>
-                  Gerar Boleto
-                </Text>
-              </TouchableOpacity>
-            </BoxParcelas>
-          </View>
-          <BoxAlternativa>
-            <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-              <Text style={[styles.Title, { fontSize: 16 }]}>Outras Opções de Pagamento</Text>
-              <Icones.DotsIcone size={16} color={colors.primary} />
-            </View>
-            <View style={{ display: "flex", flexDirection: "row", justifyContent: 'space-between' }}>
-              <TouchableOpacity style={{
-                display: "flex", flexDirection: "row", alignItems: "center",
-                gap: 12, padding: 16, width: 157, maxWidth: 157,
-                borderRadius: 8,
-                backgroundColor: colors.background
-              }}>
-                <Icones.PixIcone size={18} color={colors.primary} />
-                <Text style={[styles.Text, { fontSize: 14, color: colors.title }]}>Pagar com Pix</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={{
-                display: "flex", flexDirection: "row", alignItems: "center",
-                gap: 12, padding: 16, width: 157, maxWidth: 157,
-                borderRadius: 8,
-                backgroundColor: colors.background
-              }}>
-                <Icones.CartaoIcone size={18} color={colors.primary} />
-                <Text style={[styles.Text, { fontSize: 14, color: colors.title }]}>Cartão</Text>
-              </TouchableOpacity>
-            </View>
-          </BoxAlternativa>
-          <View style={{
-            display: 'flex', flexDirection: 'row', gap: 16, alignItems: 'center',
-            padding: 16,
-            borderRadius: 12,
-            backgroundColor: colors.alternative
-          }}>
-            <Icones.InfoIcone size={20} color={colors.primary} />
-            <View>
-              <Text style={[styles.Title, { fontSize: 16 }]}>Precisa de ajuda?</Text>
-              <Text style={[styles.Text, { fontSize: 14 }]}>Entre em contato com nossa secretaria</Text>
+              <Text style={[styles.Text, { fontSize: 16 }]}>Avalie nosso atendimento e ajude-nos a melhorar.</Text>
             </View>
           </View>
         </View>

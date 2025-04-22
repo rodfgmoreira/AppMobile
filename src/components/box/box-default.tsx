@@ -6,7 +6,7 @@ type BoxHistoricoProps = {
   children: ReactNode;
 };
 
-export default function BoxHistorico({ children }: BoxHistoricoProps) {
+export default function BoxDefault({ children }: BoxHistoricoProps) {
   return (
     <View style={{
       width: '100%', height: 'auto',
