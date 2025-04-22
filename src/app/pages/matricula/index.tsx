@@ -9,6 +9,7 @@ import { styles } from "@/src/components/styles/styles";
 import Icones from "@/src/components/icones/icones";
 import BoxHistorico from "@/src/components/box/box-historico";
 import React, { useState } from 'react';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 type Props = {
   onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'Ajustes') => void;
@@ -43,6 +44,7 @@ export default function Matricula({ onNavigate }: Props) {
   const percentage = (step / totalSteps) * 100;
 
   const [selecionado, setSelecionado] = useState('boleto');
+  const [checked, setChecked] = useState(false);
 
   return (
     <AppView>
@@ -140,12 +142,29 @@ export default function Matricula({ onNavigate }: Props) {
                         )}
                       </View>
                       {item.icon}
-                      <Text style={{ fontSize: 16, color: '#374151' }}>{item.label}</Text>
+                      <Text style={{ fontSize: 16, color: colors.description }}>{item.label}</Text>
                     </TouchableOpacity>
                   ))}
                 </View>
               </View>
             </BoxHistorico>
+            <View style={{
+              flexDirection: "row", alignItems: "center", justifyContent: "center",
+              paddingHorizontal: 16, gap: 8, maxWidth: 358
+            }}>
+              <TouchableOpacity
+                onPress={() => setChecked(!checked)}
+                style={{
+                  width: 16, height: 16,
+                  borderRadius: 4, borderWidth: 2, borderColor: colors.primary,
+                  alignItems: 'center', justifyContent: 'center'
+                }}
+              >
+                {checked && (
+                  <FontAwesome name="square" size={10} color={colors.primary} />)}
+              </TouchableOpacity>
+              <Text style={{ fontSize: 14, color: colors.description }}>Li e aceito os termos de matrícula e política de pagamento da instituição</Text>
+            </View>
           </View>
         </View>
       </Content>
