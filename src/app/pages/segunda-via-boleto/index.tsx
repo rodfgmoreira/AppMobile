@@ -1,5 +1,4 @@
 import { View, Text, TouchableOpacity } from "react-native";
-import { useFonts } from 'expo-font';
 import BoxAlternativa from "@/src/components/box/box-alternativa";
 import BarraDeStatus from "@/src/components/barra-de-status";
 import Header from "@/src/components/header";
@@ -15,11 +14,6 @@ type Props = {
 };
 
 export default function SegundaViaBoleto({ onNavigate }: Props) {
-  
-  const [fontsLoaded] = useFonts({
-    'Poppins-Regular': require('@/src/assets/fonts/Poppins-Regular.ttf'),
-    'Poppins-Bold': require('@/src/assets/fonts/Poppins-Bold.ttf'),
-  });
 
   const handleButtonClick = () => {
     onNavigate('Historico');
