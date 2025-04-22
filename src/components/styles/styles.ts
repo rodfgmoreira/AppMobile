@@ -12,6 +12,17 @@ export const styles = StyleSheet.create({
       justifyContent: 'center', alignItems: 'center', 
       borderRadius: 8, backgroundColor: colors.primary
    },
+   NextButton: {
+      height: 50, width: 172,
+      justifyContent: 'center', alignItems: 'center', 
+      borderColor: colors.primary, borderRadius: 8, borderStyle: 'solid', borderWidth: 1,
+      backgroundColor: colors.primary
+   },
+   BackButton: {
+      height: 50, width: 172,
+      justifyContent: 'center', alignItems: 'center', 
+      borderColor: colors.border, borderRadius: 8, borderStyle: 'solid', borderWidth: 1
+   },
    HeaderTitle: {
       fontFamily: 'Poppins-Bold', fontSize: 20,
       color: colors.title
@@ -39,5 +50,16 @@ export const styles = StyleSheet.create({
    NavText: {
       fontFamily: 'Poppins-Regular', fontSize: 12,
       color: colors.description
-   }
+   },
+   modalBackground: {
+      flex: 1,
+      justifyContent: 'center',
+      backgroundColor: 'rgba(0,0,0,0.5)'
+    },
+    modalContainer: {
+      margin: 20,
+      padding: 20,
+      backgroundColor: 'white',
+      borderRadius: 10
+    }
 })

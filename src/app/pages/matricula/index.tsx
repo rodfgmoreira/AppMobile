@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Modal } from "react-native";
 import { useFonts } from 'expo-font';
 import BarraDeStatus from "@/src/components/barra-de-status";
 import Header from "@/src/components/header";
@@ -150,7 +150,7 @@ export default function Matricula({ onNavigate }: Props) {
             </BoxHistorico>
             <View style={{
               flexDirection: "row", alignItems: "center", justifyContent: "center",
-              paddingHorizontal: 16, gap: 8, maxWidth: 358
+              paddingHorizontal: 16, gap: 8, maxWidth: 358, marginBottom: 16
             }}>
               <TouchableOpacity
                 onPress={() => setChecked(!checked)}
@@ -164,6 +164,14 @@ export default function Matricula({ onNavigate }: Props) {
                   <FontAwesome name="square" size={10} color={colors.primary} />)}
               </TouchableOpacity>
               <Text style={{ fontSize: 14, color: colors.description }}>Li e aceito os termos de matrícula e política de pagamento da instituição</Text>
+            </View>
+            <View style={{ flexDirection: 'row', justifyContent: "space-between", marginBottom: 16 }}>
+              <TouchableOpacity style={[styles.BackButton]}>
+                <Text style={[styles.Text, { fontSize: 16, color: colors.text }]}>Voltar</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={[styles.NextButton]}>
+                <Text style={[styles.Text, { fontSize: 16, color: colors.background }]}>Continuar</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
