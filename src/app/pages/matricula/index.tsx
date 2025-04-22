@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Modal } from "react-native";
+import { View, Text, TouchableOpacity, Modal, Button } from "react-native";
 import { useFonts } from 'expo-font';
 import BarraDeStatus from "@/src/components/barra-de-status";
 import Header from "@/src/components/header";
@@ -45,6 +45,7 @@ export default function Matricula({ onNavigate }: Props) {
 
   const [selecionado, setSelecionado] = useState('boleto');
   const [checked, setChecked] = useState(false);
+  const [visivel, setVisivel] = useState(false);
 
   return (
     <AppView>
@@ -57,7 +58,60 @@ export default function Matricula({ onNavigate }: Props) {
             </TouchableOpacity>
             <Text style={styles.HeaderTitle}>Nova Matrícula</Text>
           </View>
-          <Icones.InfoIcone size={20} color={colors.primary} />
+          <TouchableOpacity onPress={() => setVisivel(true)}>
+            <Icones.InfoIcone size={20} color={colors.primary} />
+          </TouchableOpacity>
+          <Modal
+            visible={visivel}
+            transparent
+            animationType="slide"
+            onRequestClose={() => setVisivel(false)}
+          >
+            <View style={styles.modalBackground}>
+              <View style={styles.modalContainer}>
+                <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 12 }}>
+                  Guia Rápido de Pagamento da Matrícula
+                </Text>
+
+                <View style={{ marginBottom: 8 }}>
+                  <Text style={styles.BoldText}>Etapa 2 de 3</Text>
+                  <Text style={{ color: colors.description }}>
+                    Acompanhe seu progresso no processo de matrícula. Esta é a etapa de pagamento.
+                  </Text>
+                </View>
+
+                <View style={{ marginBottom: 8 }}>
+                  <Text style={styles.BoldText}>Taxa de Matrícula</Text>
+                  <Text style={{ color: colors.description }}>
+                    Mostra o valor da taxa necessária para efetivar sua matrícula e o prazo para pagamento.
+                  </Text>
+                </View>
+
+                <View style={{ marginBottom: 8 }}>
+                  <Text style={styles.BoldText}>Forma de Pagamento</Text>
+                  <Text style={{ color: colors.description }}>
+                    Escolha entre Boleto Bancário, PIX ou Cartão de Crédito para realizar o pagamento da matrícula.
+                  </Text>
+                </View>
+
+                <View style={{ marginBottom: 8 }}>
+                  <Text style={styles.BoldText}>Termos de Matrícula</Text>
+                  <Text style={{ color: colors.description }}>
+                    Marque a caixa para aceitar os termos e políticas da instituição, etapa obrigatória para continuar.
+                  </Text>
+                </View>
+
+                <View style={{ marginBottom: 16 }}>
+                  <Text style={styles.BoldText}>Botões de Ação</Text>
+                  <Text style={{ color: colors.description }}>
+                    Use "Voltar" para revisar informações anteriores ou "Continuar" para seguir com a matrícula.
+                  </Text>
+                </View>
+
+                <Button title="Fechar" onPress={() => setVisivel(false)} />
+              </View>
+            </View>
+          </Modal>
         </View>
       </Header>
       <Content>
