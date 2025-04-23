@@ -10,7 +10,7 @@ import Icones from "@/src/components/icones/icones";
 import BoxParcelas from "@/src/components/box/box-parcelas";
 
 type Props = {
-  onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'Ajustes') => void;
+  onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'PesquisaSatisfacao' | 'Ajustes') => void;
 };
 
 export default function SegundaViaBoleto({ onNavigate }: Props) {

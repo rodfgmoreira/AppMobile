@@ -11,7 +11,7 @@ import BoxAlternativaHome from "@/src/components/box/box-alternativa-home";
 import { useState } from "react";
 
 type Props = {
-  onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'Ajustes') => void;
+  onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'PesquisaSatisfacao' | 'SegundaViaBoleto' | 'Ajustes') => void;
 };
 
 export default function Home({ onNavigate }: Props) {
@@ -96,7 +96,7 @@ export default function Home({ onNavigate }: Props) {
             justifyContent: 'space-between'
           }}>
             <BoxHome>
-              <TouchableOpacity onPress={() => onNavigate('Home')}>
+              <TouchableOpacity onPress={() => onNavigate('PesquisaSatisfacao')}>
                 <Icones.MensalidadeIcone size={20} color={colors.primary} />
                 <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidades</Text>
                 <Text style={[styles.Text, { fontSize: 14 }]}>Consulte parcelas e saldo</Text>
@@ -124,13 +124,15 @@ export default function Home({ onNavigate }: Props) {
               </TouchableOpacity>
             </BoxHome>
           </View>
-          <BoxAlternativaHome>
-            <View>
-              <Text style={[styles.Title, { fontSize: 16 }]}>Pesquisa de Satisfação</Text>
-              <Text style={[styles.Text, { fontSize: 14 }]}>Sua opinião é importante!</Text>
-            </View>
-            <Icones.EstrelaIcone size={20} color={colors.primary} />
-          </BoxAlternativaHome>
+          <TouchableOpacity onPress={() => onNavigate('PesquisaSatisfacao')}>
+            <BoxAlternativaHome>
+              <View>
+                <Text style={[styles.Title, { fontSize: 16 }]}>Pesquisa de Satisfação</Text>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Sua opinião é importante!</Text>
+              </View>
+              <Icones.EstrelaIcone size={20} color={colors.primary} />
+            </BoxAlternativaHome>
+          </TouchableOpacity>
         </View>
       </Content>
     </AppView>

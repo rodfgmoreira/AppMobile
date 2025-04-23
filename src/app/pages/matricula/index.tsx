@@ -7,9 +7,9 @@ import AppView from "@/src/components/app-view";
 import Content from "@/src/components/content";
 import { styles } from "@/src/components/styles/styles";
 import Icones from "@/src/components/icones/icones";
-import BoxHistorico from "@/src/components/box/box-historico";
 import React, { useState } from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import BoxDefault from "@/src/components/box/box-default";
 
 type Props = {
   onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'Ajustes') => void;
@@ -139,7 +139,7 @@ export default function Matricula({ onNavigate }: Props) {
             <View style={{ marginBottom: 16 }}>
               <Text style={styles.BoldText}>Taxa de Matrícula</Text>
             </View>
-            <BoxHistorico>
+            <BoxDefault>
               <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Text style={[styles.Text, { fontSize: 16, color: colors.description }]}>Valor da taxa</Text>
                 <Text style={[styles.Title, { fontSize: 16 }]}>R$ 250,00</Text>
@@ -147,8 +147,8 @@ export default function Matricula({ onNavigate }: Props) {
               <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Text style={[styles.Text, { fontSize: 14 }]}>Vencimento: 7 dias após confirmação</Text>
               </View>
-            </BoxHistorico>
-            <BoxHistorico>
+            </BoxDefault>
+            <BoxDefault>
               <View style={{ justifyContent: 'space-between' }}>
                 <View>
                   <Text style={[styles.Title, { fontSize: 16 }]}>Forma de Pagamento</Text>
@@ -196,7 +196,7 @@ export default function Matricula({ onNavigate }: Props) {
                   ))}
                 </View>
               </View>
-            </BoxHistorico>
+            </BoxDefault>
             <View style={{
               flexDirection: "row", alignItems: "center", justifyContent: "center",
               paddingHorizontal: 16, gap: 8, maxWidth: 358, marginBottom: 16

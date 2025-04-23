@@ -6,7 +6,7 @@ import AppView from "@/src/components/app-view";
 import Content from "@/src/components/content";
 import { styles } from "@/src/components/styles/styles";
 import Icones from "@/src/components/icones/icones";
-import BoxHistorico from "@/src/components/box/box-historico";
+import BoxDefault from "@/src/components/box/box-default";
 
 type Props = {
   onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'SegundaViaBoleto' | 'Ajustes') => void;
@@ -37,7 +37,7 @@ export default function Historico({ onNavigate }: Props) {
             justifyContent: 'space-between',
             marginBottom: -16
           }}>
-            <BoxHistorico>
+            <BoxDefault>
               <Text style={[styles.Title, { fontSize: 16 }]}>Resumo do Ano</Text>
               <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Text style={[styles.Text, { fontSize: 14 }]}>Total Pago (2025)</Text>
@@ -47,7 +47,7 @@ export default function Historico({ onNavigate }: Props) {
                 <Text style={[styles.Text, { fontSize: 14 }]}>Comprovantes Emitidos</Text>
                 <Text style={[styles.Title, { fontSize: 16 }]}>12</Text>
               </View>
-            </BoxHistorico>
+            </BoxDefault>
           </View>
           <View>
             <View style={{ display: 'flex', flexDirection: 'row', gap: 16, justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
@@ -57,7 +57,7 @@ export default function Historico({ onNavigate }: Props) {
                 <Text style={[styles.AlternativeText, { fontSize: 14 }]}>Filtrar</Text>
               </View>
             </View>
-            <BoxHistorico>
+            <BoxDefault>
               <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                 <View>
                   <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidade Janeiro</Text>
@@ -74,8 +74,8 @@ export default function Historico({ onNavigate }: Props) {
                   <Text style={[styles.AlternativeText, { fontSize: 14 }]}>Comprovante</Text>
                 </View>
               </View>
-            </BoxHistorico>
-            <BoxHistorico>
+            </BoxDefault>
+            <BoxDefault>
               <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                 <View>
                   <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidade Fevereiro</Text>
@@ -92,8 +92,8 @@ export default function Historico({ onNavigate }: Props) {
                   <Text style={[styles.AlternativeText, { fontSize: 14 }]}>Comprovante</Text>
                 </View>
               </View>
-            </BoxHistorico>
-            <BoxHistorico>
+            </BoxDefault>
+            <BoxDefault>
               <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                 <View>
                   <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidade Março</Text>
@@ -110,7 +110,7 @@ export default function Historico({ onNavigate }: Props) {
                   <Text style={[styles.AlternativeText, { fontSize: 14 }]}>Comprovante</Text>
                 </View>
               </View>
-            </BoxHistorico>
+            </BoxDefault>
           </View>
         </View>
       </Content>
