@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import BarraDeStatus from "@/src/components/barra-de-status";
 import Header from "@/src/components/header";
 import colors from "@/src/components/theme/cores";
@@ -53,6 +53,69 @@ export default function PesquisaSatisfacao({ onNavigate }: Props) {
               </View>
             </View>
           </BoxDefault>
+          <Text style={[styles.Title, { fontSize: 16 }]}>O que você achou do nosso serviço?</Text>
+          <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+            <View style={{ gap: 10 }}>
+              <TouchableOpacity style={{
+                flexDirection: 'row', justifyContent: 'center', alignItems: "center",
+                gap: 12, padding: 16, width: 173, maxWidth: 173,
+                borderRadius: 8,
+                backgroundColor: colors.background
+              }}>
+                <Icones.CartaoIcone size={18} color={colors.primary} />
+                <Text style={[styles.Text, { fontSize: 16, color: colors.title }]}>Rapido</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={{
+                flexDirection: 'row', justifyContent: 'center', alignItems: "center",
+                gap: 12, padding: 16, width: 173, maxWidth: 173,
+                borderRadius: 8,
+                backgroundColor: colors.background
+              }}>
+                <Icones.CartaoIcone size={18} color={colors.primary} />
+                <Text style={[styles.Text, { fontSize: 16, color: colors.title }]}>Útil</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={{ gap: 10 }}>
+              <TouchableOpacity style={{
+                flexDirection: 'row', justifyContent: 'center', alignItems: "center",
+                gap: 12, padding: 16, width: 173, maxWidth: 173,
+                borderRadius: 8,
+                backgroundColor: colors.background
+              }}>
+                <Icones.CartaoIcone size={18} color={colors.primary} />
+                <Text style={[styles.Text, { fontSize: 16, color: colors.title }]}>Fácil de usar</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={{
+                flexDirection: 'row', justifyContent: 'center', alignItems: "center",
+                gap: 12, padding: 16, width: 173, maxWidth: 173,
+                borderRadius: 8,
+                backgroundColor: colors.background
+              }}>
+                <Icones.CartaoIcone size={18} color={colors.primary} />
+                <Text style={[styles.Text, { fontSize: 16, color: colors.title }]}>Completo</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+          <Text style={[styles.Title, { fontSize: 16 }]}>O que você achou do nosso serviço?</Text>
+          <TextInput
+            style={{
+              width: '100%', height: 'auto', minHeight: 178,
+              backgroundColor: colors.background,
+              padding: 16,
+              borderRadius: 12, borderColor: colors.border, borderWidth: 1,
+              shadowColor: '#000',
+              shadowOffset: { width: 0, height: 1 },
+              shadowOpacity: 0.05,
+              shadowRadius: 2,
+              elevation: 1,
+            }}
+            placeholder="Conte-nos como podemos melhorar..."
+          />
+          <TouchableOpacity style={[styles.AlternativeButton]} onPress={() => alert('Gerando boleto...')}>
+            <Text style={[styles.Text, { color: colors.background, fontSize: 16 }]}>
+              Enviar Avaliação
+            </Text>
+          </TouchableOpacity>
         </View>
       </Content>
     </AppView>
