@@ -1,5 +1,4 @@
 import { View, Text, TouchableOpacity } from "react-native";
-import BoxAlternativa from "@/src/components/box/box-alternativa";
 import BarraDeStatus from "@/src/components/barra-de-status";
 import Header from "@/src/components/header";
 import colors from "@/src/components/theme/cores";
@@ -7,7 +6,7 @@ import AppView from "@/src/components/app-view";
 import Content from "@/src/components/content";
 import { styles } from "@/src/components/styles/styles";
 import Icones from "@/src/components/icones/icones";
-import BoxParcelas from "@/src/components/box/box-parcelas";
+import BoxDefault from "@/src/components/box/box-default";
 
 type Props = {
   onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'PesquisaSatisfacao' | 'Ajustes') => void;
@@ -38,6 +37,22 @@ export default function PesquisaSatisfacao({ onNavigate }: Props) {
               <Text style={[styles.Text, { fontSize: 16 }]}>Avalie nosso atendimento e ajude-nos a melhorar.</Text>
             </View>
           </View>
+          <BoxDefault>
+            <View style={{ display: "flex", alignItems: "center", gap: 16 }}>
+              <Text style={[styles.Title, { fontSize: 16 }]}>Como você avalia nosso atendimento?</Text>
+              <View style={{ flexDirection: 'row', gap: 16 }}>
+                <Icones.StartIcone size={30} color={colors.text} />
+                <Icones.StartIcone size={30} color={colors.text} />
+                <Icones.StartIcone size={30} color={colors.text} />
+                <Icones.StartIcone size={30} color={colors.text} />
+                <Icones.StartIcone size={30} color={colors.text} />
+              </View>
+              <View style={{ width: '100%', flexDirection: "row", justifyContent: "space-between" }}>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Muito ruim</Text>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Excelente</Text>
+              </View>
+            </View>
+          </BoxDefault>
         </View>
       </Content>
     </AppView>

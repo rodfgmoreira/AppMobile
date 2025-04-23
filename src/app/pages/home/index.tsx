@@ -124,13 +124,15 @@ export default function Home({ onNavigate }: Props) {
               </TouchableOpacity>
             </BoxHome>
           </View>
-          <BoxAlternativaHome>
-            <View>
-              <Text style={[styles.Title, { fontSize: 16 }]}>Pesquisa de Satisfação</Text>
-              <Text style={[styles.Text, { fontSize: 14 }]}>Sua opinião é importante!</Text>
-            </View>
-            <Icones.EstrelaIcone size={20} color={colors.primary} />
-          </BoxAlternativaHome>
+          <TouchableOpacity onPress={() => onNavigate('PesquisaSatisfacao')}>
+            <BoxAlternativaHome>
+              <View>
+                <Text style={[styles.Title, { fontSize: 16 }]}>Pesquisa de Satisfação</Text>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Sua opinião é importante!</Text>
+              </View>
+              <Icones.EstrelaIcone size={20} color={colors.primary} />
+            </BoxAlternativaHome>
+          </TouchableOpacity>
         </View>
       </Content>
     </AppView>
