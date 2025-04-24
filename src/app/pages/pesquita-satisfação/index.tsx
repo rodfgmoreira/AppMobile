@@ -7,6 +7,7 @@ import Content from "@/src/components/content";
 import { styles } from "@/src/components/styles/styles";
 import Icones from "@/src/components/icones/icones";
 import BoxDefault from "@/src/components/box/box-default";
+import { useState } from "react";
 
 type Props = {
   onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'PesquisaSatisfacao' | 'Ajustes') => void;
@@ -14,9 +15,14 @@ type Props = {
 
 export default function PesquisaSatisfacao({ onNavigate }: Props) {
 
-  const handleButtonClick = () => {
-    onNavigate('Historico');
-  };
+  const [nota, setNota] = useState(0);
+
+  const opcoesAvaliacao = [
+    { icone: Icones.RaioIcone, texto: 'Rápido' },
+    { icone: Icones.GosteiIcone, texto: 'Útil' },
+    { icone: Icones.CorretoIcone, texto: 'Fácil de usar' },
+    { icone: Icones.CorretoBgIcone, texto: 'Completo' },
+  ];
 
   return (
     <AppView>
@@ -39,13 +45,19 @@ export default function PesquisaSatisfacao({ onNavigate }: Props) {
           </View>
           <BoxDefault>
             <View style={{ display: "flex", alignItems: "center", gap: 16 }}>
-              <Text style={[styles.Title, { fontSize: 16 }]}>Como você avalia nosso atendimento?</Text>
+              <Text style={[styles.Title, { fontSize: 16 }]}>
+                Como você avalia nosso atendimento?
+              </Text>
               <View style={{ flexDirection: 'row', gap: 16 }}>
-                <Icones.StartIcone size={30} color={colors.text} />
-                <Icones.StartIcone size={30} color={colors.text} />
-                <Icones.StartIcone size={30} color={colors.text} />
-                <Icones.StartIcone size={30} color={colors.text} />
-                <Icones.StartIcone size={30} color={colors.text} />
+                {[1, 2, 3, 4, 5].map((num) => (
+                  <TouchableOpacity key={num} onPress={() => setNota(num)}>
+                    {num <= nota ? (
+                      <Icones.FullStartIcone size={30} color={colors.primary} />
+                    ) : (
+                      <Icones.StartIcone size={30} color={colors.text} />
+                    )}
+                  </TouchableOpacity>
+                ))}
               </View>
               <View style={{ width: '100%', flexDirection: "row", justifyContent: "space-between" }}>
                 <Text style={[styles.Text, { fontSize: 14 }]}>Muito ruim</Text>
@@ -55,46 +67,29 @@ export default function PesquisaSatisfacao({ onNavigate }: Props) {
           </BoxDefault>
           <Text style={[styles.Title, { fontSize: 16 }]}>O que você achou do nosso serviço?</Text>
           <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-            <View style={{ gap: 10 }}>
-              <TouchableOpacity style={{
-                flexDirection: 'row', justifyContent: 'center', alignItems: "center",
-                gap: 12, padding: 16, width: 173, maxWidth: 173,
-                borderRadius: 8,
-                backgroundColor: colors.background
-              }}>
-                <Icones.CartaoIcone size={18} color={colors.primary} />
-                <Text style={[styles.Text, { fontSize: 16, color: colors.title }]}>Rapido</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={{
-                flexDirection: 'row', justifyContent: 'center', alignItems: "center",
-                gap: 12, padding: 16, width: 173, maxWidth: 173,
-                borderRadius: 8,
-                backgroundColor: colors.background
-              }}>
-                <Icones.CartaoIcone size={18} color={colors.primary} />
-                <Text style={[styles.Text, { fontSize: 16, color: colors.title }]}>Útil</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={{ gap: 10 }}>
-              <TouchableOpacity style={{
-                flexDirection: 'row', justifyContent: 'center', alignItems: "center",
-                gap: 12, padding: 16, width: 173, maxWidth: 173,
-                borderRadius: 8,
-                backgroundColor: colors.background
-              }}>
-                <Icones.CartaoIcone size={18} color={colors.primary} />
-                <Text style={[styles.Text, { fontSize: 16, color: colors.title }]}>Fácil de usar</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={{
-                flexDirection: 'row', justifyContent: 'center', alignItems: "center",
-                gap: 12, padding: 16, width: 173, maxWidth: 173,
-                borderRadius: 8,
-                backgroundColor: colors.background
-              }}>
-                <Icones.CartaoIcone size={18} color={colors.primary} />
-                <Text style={[styles.Text, { fontSize: 16, color: colors.title }]}>Completo</Text>
-              </TouchableOpacity>
-            </View>
+            {[0, 1].map(coluna => (
+              <View key={coluna} style={{ gap: 10 }}>
+                {opcoesAvaliacao.slice(coluna * 2, coluna * 2 + 2).map((opcaoAvaliacao, index) => (
+                  <TouchableOpacity
+                    key={index}
+                    style={{
+                      flexDirection: 'row',
+                      justifyContent: 'center',
+                      alignItems: "center",
+                      gap: 12,
+                      padding: 16,
+                      width: 173,
+                      maxWidth: 173,
+                      borderRadius: 8,
+                      backgroundColor: colors.background
+                    }}
+                  >
+                    <opcaoAvaliacao.icone size={18} color={colors.primary} />
+                    <Text style={[styles.Text, { fontSize: 16, color: colors.title }]}>{opcaoAvaliacao.texto}</Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            ))}
           </View>
           <Text style={[styles.Title, { fontSize: 16 }]}>O que você achou do nosso serviço?</Text>
           <TextInput
@@ -108,10 +103,15 @@ export default function PesquisaSatisfacao({ onNavigate }: Props) {
               shadowOpacity: 0.05,
               shadowRadius: 2,
               elevation: 1,
+              textAlignVertical: 'top'
             }}
             placeholder="Conte-nos como podemos melhorar..."
+            multiline
+            numberOfLines={4}
+            textBreakStrategy="simple"
+            autoCorrect={true}
           />
-          <TouchableOpacity style={[styles.AlternativeButton]} onPress={() => alert('Gerando boleto...')}>
+          <TouchableOpacity style={[styles.AlternativeButton, { height: 58 }]} onPress={() => alert('Gerando boleto...')}>
             <Text style={[styles.Text, { color: colors.background, fontSize: 16 }]}>
               Enviar Avaliação
             </Text>

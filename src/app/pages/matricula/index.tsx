@@ -29,10 +29,6 @@ const pagamentos = [
 
 export default function Matricula({ onNavigate }: Props) {
 
-  const handleButtonClick = () => {
-    onNavigate('Historico');
-  };
-
   const step = 2;
   const totalSteps = 3;
 

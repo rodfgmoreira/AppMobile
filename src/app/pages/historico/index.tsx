@@ -14,10 +14,6 @@ type Props = {
 
 export default function Historico({ onNavigate }: Props) {
 
-  const handleButtonClick = () => {
-    onNavigate('Historico');
-  };
-
   return (
     <AppView>
       <BarraDeStatus />

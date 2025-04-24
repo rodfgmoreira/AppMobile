@@ -15,10 +15,6 @@ type Props = {
 
 export default function SegundaViaBoleto({ onNavigate }: Props) {
 
-  const handleButtonClick = () => {
-    onNavigate('Historico');
-  };
-
   return (
     <AppView>
       <BarraDeStatus />
