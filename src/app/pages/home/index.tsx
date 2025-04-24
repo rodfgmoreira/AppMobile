@@ -16,10 +16,6 @@ type Props = {
 
 export default function Home({ onNavigate }: Props) {
 
-  const handleButtonClick = () => {
-    onNavigate('Historico');
-  };
-
   const [visivel, setVisivel] = useState(false);
 
   return (

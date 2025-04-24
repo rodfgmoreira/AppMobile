@@ -15,10 +15,6 @@ type Props = {
 
 export default function PesquisaSatisfacao({ onNavigate }: Props) {
 
-  const handleButtonClick = () => {
-    onNavigate('Historico');
-  };
-
   const [nota, setNota] = useState(0);
 
   const opcoesAvaliacao = [

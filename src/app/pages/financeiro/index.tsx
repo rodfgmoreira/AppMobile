@@ -17,10 +17,6 @@ type Props = {
 
 export default function Financeiro({ onNavigate }: Props) {
 
-  const handleButtonClick = () => {
-    onNavigate('Historico');
-  };
-
   return (
     <AppView>
       <BarraDeStatus />
