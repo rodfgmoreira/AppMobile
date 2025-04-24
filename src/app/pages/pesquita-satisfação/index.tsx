@@ -108,10 +108,15 @@ export default function PesquisaSatisfacao({ onNavigate }: Props) {
               shadowOpacity: 0.05,
               shadowRadius: 2,
               elevation: 1,
+              textAlignVertical: 'top'
             }}
             placeholder="Conte-nos como podemos melhorar..."
+            multiline
+            numberOfLines={4}
+            textBreakStrategy="simple"
+            autoCorrect={true}
           />
-          <TouchableOpacity style={[styles.AlternativeButton]} onPress={() => alert('Gerando boleto...')}>
+          <TouchableOpacity style={[styles.AlternativeButton, { height: 58 }]} onPress={() => alert('Gerando boleto...')}>
             <Text style={[styles.Text, { color: colors.background, fontSize: 16 }]}>
               Enviar Avaliação
             </Text>
