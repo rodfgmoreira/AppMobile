@@ -62,7 +62,7 @@ export default function PesquisaSatisfacao({ onNavigate }: Props) {
                 borderRadius: 8,
                 backgroundColor: colors.background
               }}>
-                <Icones.CartaoIcone size={18} color={colors.primary} />
+                <Icones.RaioIcone size={18} color={colors.primary} />
                 <Text style={[styles.Text, { fontSize: 16, color: colors.title }]}>Rapido</Text>
               </TouchableOpacity>
               <TouchableOpacity style={{
@@ -71,7 +71,7 @@ export default function PesquisaSatisfacao({ onNavigate }: Props) {
                 borderRadius: 8,
                 backgroundColor: colors.background
               }}>
-                <Icones.CartaoIcone size={18} color={colors.primary} />
+                <Icones.GosteiIcone size={18} color={colors.primary} />
                 <Text style={[styles.Text, { fontSize: 16, color: colors.title }]}>Útil</Text>
               </TouchableOpacity>
             </View>
@@ -82,7 +82,7 @@ export default function PesquisaSatisfacao({ onNavigate }: Props) {
                 borderRadius: 8,
                 backgroundColor: colors.background
               }}>
-                <Icones.CartaoIcone size={18} color={colors.primary} />
+                <Icones.CorretoIcone size={18} color={colors.primary} />
                 <Text style={[styles.Text, { fontSize: 16, color: colors.title }]}>Fácil de usar</Text>
               </TouchableOpacity>
               <TouchableOpacity style={{
@@ -91,7 +91,7 @@ export default function PesquisaSatisfacao({ onNavigate }: Props) {
                 borderRadius: 8,
                 backgroundColor: colors.background
               }}>
-                <Icones.CartaoIcone size={18} color={colors.primary} />
+                <Icones.CorretoBgIcone size={18} color={colors.primary} />
                 <Text style={[styles.Text, { fontSize: 16, color: colors.title }]}>Completo</Text>
               </TouchableOpacity>
             </View>
