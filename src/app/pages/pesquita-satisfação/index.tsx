@@ -111,7 +111,7 @@ export default function PesquisaSatisfacao({ onNavigate }: Props) {
             textBreakStrategy="simple"
             autoCorrect={true}
           />
-          <TouchableOpacity style={[styles.AlternativeButton, { height: 58 }]} onPress={() => alert('Gerando boleto...')}>
+          <TouchableOpacity style={[styles.AlternativeButton, { height: 58 }]}>
             <Text style={[styles.Text, { color: colors.background, fontSize: 16 }]}>
               Enviar Avaliação
             </Text>
