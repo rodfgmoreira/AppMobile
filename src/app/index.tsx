@@ -6,6 +6,7 @@ import SegundaViaBoleto from './pages/segunda-via-boleto';
 import BarraDeNavegacao from '../components/barra-de-navegacao';
 import Matricula from './pages/matricula';
 import PesquisaSatisfacao from './pages/pesquita-satisfação';
+import Ajustes from './pages/ajustes';
 
 export default function Index() {
   const [activeTab, setActiveTab] = React.useState<'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'PesquisaSatisfacao' | 'Ajustes'>('Home');
@@ -19,7 +20,7 @@ export default function Index() {
       case 'Perfil':
         return <Financeiro onNavigate={setActiveTab} />;
       case 'Ajustes':
-        return <SegundaViaBoleto onNavigate={setActiveTab} />;
+        return <Ajustes onNavigate={setActiveTab} />;
       case 'SegundaViaBoleto':
         return <SegundaViaBoleto onNavigate={setActiveTab} />;
       case 'Matricula':
