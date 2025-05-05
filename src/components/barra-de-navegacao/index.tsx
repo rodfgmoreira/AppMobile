@@ -4,8 +4,8 @@ import Icones from '../icones/icones';
 import colors from '../theme/cores';
 
 type NavProps = {
-  activeTab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'PesquisaSatisfacao' | 'Ajustes';
-  onTabChange: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'PesquisaSatisfacao' | 'Ajustes') => void;
+  activeTab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'PesquisaSatisfacao' | 'Login' | 'Ajustes';
+  onTabChange: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'PesquisaSatisfacao' | 'Login' | 'Ajustes') => void;
 };
 
 export default function BarraDeNavegacao({ activeTab, onTabChange }: NavProps) {
