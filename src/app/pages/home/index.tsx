@@ -9,9 +9,10 @@ import Icones from "@/src/components/icones/icones";
 import BoxHome from "@/src/components/box/box-home";
 import BoxAlternativaHome from "@/src/components/box/box-alternativa-home";
 import { useState } from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type Props = {
-  onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'PesquisaSatisfacao' | 'Ajustes') => void;
+  onNavigate: (tab: 'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'PesquisaSatisfacao' | 'Login' | 'Ajustes') => void;
   permitirAcesso: (permitido: boolean) => void;
 };
 
@@ -27,6 +28,15 @@ export default function Home({ onNavigate, permitirAcesso }: Props) {
     } else {
       alert("CPF inválido. Digite 11 números.");
     }
+  };
+
+  const salvarCpf = async (cpf: string) => {
+    await AsyncStorage.setItem('cpf', cpf);
+  };
+
+  const handleLogout = async () => {
+    await AsyncStorage.removeItem('cpf');
+    permitirAcesso(false);
   };
 
   return (
@@ -170,6 +180,14 @@ export default function Home({ onNavigate, permitirAcesso }: Props) {
                   </TouchableOpacity>
                 </BoxHome>
               </View>
+              <TouchableOpacity onPress={handleLogout} style={{
+                justifyContent: "center", alignItems: "center",
+                backgroundColor: colors.dangerBg,
+                padding: 16,
+                borderRadius: 12, borderColor: colors.danger, borderWidth: 1
+              }}>
+                <Text style={{ color: colors.danger, fontWeight: 'bold' }}>Deslogar</Text>
+              </TouchableOpacity>
               <TouchableOpacity onPress={() => onNavigate('PesquisaSatisfacao')}>
                 <BoxAlternativaHome>
                   <View>
