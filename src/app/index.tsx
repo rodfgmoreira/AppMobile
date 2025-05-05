@@ -10,11 +10,12 @@ import Ajustes from './pages/ajustes';
 
 export default function Index() {
   const [activeTab, setActiveTab] = React.useState<'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'PesquisaSatisfacao' | 'Ajustes'>('Home');
+  const [mostrarBarra, setMostrarBarra] = React.useState(false);
 
   const renderScreen = () => {
     switch (activeTab) {
       case 'Home':
-        return <Home onNavigate={setActiveTab} />;
+        return <Home onNavigate={setActiveTab} permitirAcesso={setMostrarBarra} />;
       case 'Historico':
         return <Historico onNavigate={setActiveTab} />;
       case 'Perfil':
@@ -28,14 +29,14 @@ export default function Index() {
       case 'PesquisaSatisfacao':
         return <PesquisaSatisfacao onNavigate={setActiveTab} />;
       default:
-        return <Home onNavigate={setActiveTab} />;
+        return <Home onNavigate={setActiveTab} permitirAcesso={setMostrarBarra} />;
     }
   };
 
   return (
     <>
       {renderScreen()}
-      <BarraDeNavegacao activeTab={activeTab} onTabChange={setActiveTab} />
+      {mostrarBarra && <BarraDeNavegacao activeTab={activeTab} onTabChange={setActiveTab} />}
     </>
   );
 }
