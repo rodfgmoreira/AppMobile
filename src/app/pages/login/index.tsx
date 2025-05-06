@@ -38,7 +38,7 @@ export default function Login({ onNavigate, permitirAcesso }: Props) {
         <View style={{ padding: 16, gap: 20, top: '50%' }}>
           <View style={{ gap: 20 }}>
             <View style={{ alignItems: 'center' }}>
-              <Text style={styles.Title}>Bem-vindo!</Text>
+              <Text style={[styles.Title, { fontSize: 32, fontWeight: 700 }]}>Bem-vindo!</Text>
             </View>
             <View style={{ alignItems: 'center' }}>
               <Text style={styles.BoldText}>Digite seu CPF para continuar</Text>
