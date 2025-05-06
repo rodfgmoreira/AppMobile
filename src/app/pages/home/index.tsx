@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Modal, Button, TextInput } from "react-native";
+import { View, Text, TouchableOpacity, Modal, Button } from "react-native";
 import BarraDeStatus from "@/src/components/barra-de-status";
 import Header from "@/src/components/header";
 import colors from "@/src/components/theme/cores";
@@ -18,25 +18,11 @@ type Props = {
 
 export default function Home({ onNavigate, permitirAcesso }: Props) {
   const [visivel, setVisivel] = useState(false);
-  const [cpf, setCpf] = useState('');
-  const [cpfValidado, setCpfValidado] = useState(false);
-
-  const validarCpf = () => {
-    if (cpf.trim().length === 11) {
-      setCpfValidado(true);
-      permitirAcesso(true);
-    } else {
-      alert("CPF inválido. Digite 11 números.");
-    }
-  };
-
-  const salvarCpf = async (cpf: string) => {
-    await AsyncStorage.setItem('cpf', cpf);
-  };
 
   const handleLogout = async () => {
     await AsyncStorage.removeItem('cpf');
     permitirAcesso(false);
+    onNavigate('Login');
   };
 
   return (
@@ -103,102 +89,61 @@ export default function Home({ onNavigate, permitirAcesso }: Props) {
       </Header>
       <Content>
         <View style={{ padding: 16, gap: 20 }}>
-          {!cpfValidado ? (
-            <>
-              <View>
-                <Text style={styles.Title}>Digite seu CPF para continuar</Text>
-              </View>
-              <TextInput
-                placeholder="Digite seu CPF"
-                keyboardType="numeric"
-                maxLength={11}
-                value={cpf}
-                onChangeText={setCpf}
-                style={{
-                  borderColor: colors.primary,
-                  borderWidth: 1,
-                  padding: 12,
-                  borderRadius: 8,
-                  fontSize: 16
-                }}
-              />
-              <TouchableOpacity
-                style={{
-                  backgroundColor: colors.primary,
-                  padding: 12,
-                  borderRadius: 8,
-                  alignItems: 'center'
-                }}
-                onPress={validarCpf}
-              >
-                <Text style={{ color: 'white', fontWeight: 'bold' }}>Confirmar CPF</Text>
+          <View>
+            <Text style={styles.Title}>Bem-vindo!</Text>
+            <Text style={styles.Text}>Selecione uma opção para começar:</Text>
+          </View>
+          <View style={{
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between'
+          }}>
+            <BoxHome>
+              <TouchableOpacity onPress={() => onNavigate('Perfil')}>
+                <Icones.MensalidadeIcone size={20} color={colors.primary} />
+                <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidades</Text>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Consulte parcelas e saldo</Text>
               </TouchableOpacity>
-
+            </BoxHome>
+            <BoxHome>
+              <TouchableOpacity onPress={() => onNavigate('SegundaViaBoleto')}>
+                <Icones.BoletoIcone size={20} color={colors.primary} />
+                <Text style={[styles.Title, { fontSize: 16 }]}>2ª Via Boleto</Text>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Gere seus boletos</Text>
+              </TouchableOpacity>
+            </BoxHome>
+            <BoxHome>
+              <TouchableOpacity onPress={() => onNavigate('Historico')}>
+                <Icones.HistoricoIcone size={20} color={colors.primary} />
+                <Text style={[styles.Title, { fontSize: 16 }]}>Histórico</Text>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Pagamentos realizados</Text>
+              </TouchableOpacity>
+            </BoxHome>
+            <BoxHome>
               <TouchableOpacity onPress={() => onNavigate('Matricula')}>
-                <Text style={{ color: colors.primary, textAlign: 'center', marginTop: 12 }}>
-                  Fazer nova matrícula
-                </Text>
+                <Icones.MatriculaIcone size={20} color={colors.primary} />
+                <Text style={[styles.Title, { fontSize: 16 }]}>Matrícula</Text>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Nova matrícula</Text>
               </TouchableOpacity>
-            </>
-          ) : (
-            <>
+            </BoxHome>
+          </View>
+          <TouchableOpacity onPress={handleLogout} style={{
+            justifyContent: "center", alignItems: "center",
+            backgroundColor: colors.dangerBg,
+            padding: 16,
+            borderRadius: 12, borderColor: colors.danger, borderWidth: 1
+          }}>
+            <Text style={{ color: colors.danger, fontWeight: 'bold' }}>Deslogar</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => onNavigate('PesquisaSatisfacao')}>
+            <BoxAlternativaHome>
               <View>
-                <Text style={styles.Title}>Bem-vindo!</Text>
-                <Text style={styles.Text}>Selecione uma opção para começar:</Text>
+                <Text style={[styles.Title, { fontSize: 16 }]}>Pesquisa de Satisfação</Text>
+                <Text style={[styles.Text, { fontSize: 14 }]}>Sua opinião é importante!</Text>
               </View>
-              <View style={{
-                flexDirection: 'row',
-                flexWrap: 'wrap',
-                justifyContent: 'space-between'
-              }}>
-                <BoxHome>
-                  <TouchableOpacity onPress={() => onNavigate('Perfil')}>
-                    <Icones.MensalidadeIcone size={20} color={colors.primary} />
-                    <Text style={[styles.Title, { fontSize: 16 }]}>Mensalidades</Text>
-                    <Text style={[styles.Text, { fontSize: 14 }]}>Consulte parcelas e saldo</Text>
-                  </TouchableOpacity>
-                </BoxHome>
-                <BoxHome>
-                  <TouchableOpacity onPress={() => onNavigate('SegundaViaBoleto')}>
-                    <Icones.BoletoIcone size={20} color={colors.primary} />
-                    <Text style={[styles.Title, { fontSize: 16 }]}>2ª Via Boleto</Text>
-                    <Text style={[styles.Text, { fontSize: 14 }]}>Gere seus boletos</Text>
-                  </TouchableOpacity>
-                </BoxHome>
-                <BoxHome>
-                  <TouchableOpacity onPress={() => onNavigate('Historico')}>
-                    <Icones.HistoricoIcone size={20} color={colors.primary} />
-                    <Text style={[styles.Title, { fontSize: 16 }]}>Histórico</Text>
-                    <Text style={[styles.Text, { fontSize: 14 }]}>Pagamentos realizados</Text>
-                  </TouchableOpacity>
-                </BoxHome>
-                <BoxHome>
-                  <TouchableOpacity onPress={() => onNavigate('Matricula')}>
-                    <Icones.MatriculaIcone size={20} color={colors.primary} />
-                    <Text style={[styles.Title, { fontSize: 16 }]}>Matrícula</Text>
-                    <Text style={[styles.Text, { fontSize: 14 }]}>Nova matrícula</Text>
-                  </TouchableOpacity>
-                </BoxHome>
-              </View>
-              <TouchableOpacity onPress={handleLogout} style={{
-                justifyContent: "center", alignItems: "center",
-                backgroundColor: colors.dangerBg,
-                padding: 16,
-                borderRadius: 12, borderColor: colors.danger, borderWidth: 1
-              }}>
-                <Text style={{ color: colors.danger, fontWeight: 'bold' }}>Deslogar</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => onNavigate('PesquisaSatisfacao')}>
-                <BoxAlternativaHome>
-                  <View>
-                    <Text style={[styles.Title, { fontSize: 16 }]}>Pesquisa de Satisfação</Text>
-                    <Text style={[styles.Text, { fontSize: 14 }]}>Sua opinião é importante!</Text>
-                  </View>
-                  <Icones.EstrelaIcone size={20} color={colors.primary} />
-                </BoxAlternativaHome>
-              </TouchableOpacity>
-            </>
-          )}
+              <Icones.EstrelaIcone size={20} color={colors.primary} />
+            </BoxAlternativaHome>
+          </TouchableOpacity>
         </View>
       </Content>
     </AppView>

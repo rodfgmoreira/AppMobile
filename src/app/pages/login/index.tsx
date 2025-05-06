@@ -1,10 +1,9 @@
-import { View, Text, TouchableOpacity, Button, TextInput } from "react-native";
+import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import BarraDeStatus from "@/src/components/barra-de-status";
 import colors from "@/src/components/theme/cores";
 import AppView from "@/src/components/app-view";
 import Content from "@/src/components/content";
 import { styles } from "@/src/components/styles/styles";
-import Icones from "@/src/components/icones/icones";
 import { useState } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -14,27 +13,23 @@ type Props = {
 };
 
 export default function Login({ onNavigate, permitirAcesso }: Props) {
-  const [visivel, setVisivel] = useState(false);
   const [cpf, setCpf] = useState('');
   const [cpfValidado, setCpfValidado] = useState(false);
 
-  const validarCpf = () => {
+  const validarCpf = async () => {
     if (cpf.trim().length === 11) {
+      await AsyncStorage.setItem('cpf', cpf);
       setCpfValidado(true);
       permitirAcesso(true);
+      onNavigate('Home');
     } else {
       alert("CPF inválido. Digite 11 números.");
     }
-  };
+  };  
 
-  const salvarCpf = async (cpf: string) => {
-    await AsyncStorage.setItem('cpf', cpf);
-  };
-
-  const handleLogout = async () => {
-    await AsyncStorage.removeItem('cpf');
-    permitirAcesso(false);
-  };
+  // const salvarCpf = async (cpf: string) => {
+  //   await AsyncStorage.setItem('cpf', cpf);
+  // };
 
   return (
     <AppView>

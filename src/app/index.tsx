@@ -11,7 +11,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Login from './pages/login';
 
 export default function Index() {
-  const [activeTab, setActiveTab] = React.useState<'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'PesquisaSatisfacao' | 'Login' | 'Ajustes'>('Home');
+  const [activeTab, setActiveTab] = React.useState<'Home' | 'Historico' | 'Perfil' | 'Matricula' | 'SegundaViaBoleto' | 'PesquisaSatisfacao' | 'Login' | 'Ajustes'>('Login');
   const [mostrarBarra, setMostrarBarra] = React.useState(false);
 
   // Buscar CPF salvo ao iniciar o app
@@ -24,12 +24,6 @@ export default function Index() {
     };
     verificarCpfSalvo();
   }, []);
-
-  const deslogar = async () => {
-    await AsyncStorage.removeItem('cpf');
-    setMostrarBarra(false);
-    setActiveTab('Home'); // opcional: volta pra Home ao deslogar
-  };
 
   const renderScreen = () => {
     switch (activeTab) {
@@ -48,7 +42,7 @@ export default function Index() {
       case 'PesquisaSatisfacao':
         return <PesquisaSatisfacao onNavigate={setActiveTab} />;
       case 'Login':
-        return <Login onNavigate={setActiveTab} />;
+        return <Login onNavigate={setActiveTab} permitirAcesso={setMostrarBarra}/>;
       default:
         return <Home onNavigate={setActiveTab} permitirAcesso={setMostrarBarra} />;
     }
